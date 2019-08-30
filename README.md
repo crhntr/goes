@@ -12,6 +12,10 @@ The example in examples/greeting has an acceptance test using
 
 ## Hello World Example
 
+The following code and tests can will run on save without needing to
+be run as WASM; you can run `go test` from the terminal to iterate
+on the functionality.
+
 Given a this wrapper around a div containing a greeting,
 
 ```go
