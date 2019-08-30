@@ -3,10 +3,11 @@
 package greeting_test
 
 import (
+  "testing"
+
 	"github.com/crhntr/goes/examples/greeting"
 	"github.com/crhntr/goes/goesfakes"
 	"github.com/golang/mock/gomock"
-	"testing"
 )
 
 func TestNewHelloBox(t *testing.T) {
