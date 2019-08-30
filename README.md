@@ -106,7 +106,10 @@ func TestHelloBox_SetMessage(t *testing.T) {
 
 		box.Create(document)
 		box.SetMessage("Hello, world!")
-		box.Message()
+
+    if box.Message() != "Hello, world!" {
+      t.Fail()
+    }
 	}
 
 	t.Run("when initialized with an empty string", func(t *testing.T) {
@@ -130,11 +133,14 @@ func TestHelloBox_SetMessage(t *testing.T) {
 		box := greeting.NewHelloBox("")
 
 		box.Create(document)
-		box.Message()
+
+    if box.Message() != "Hello, world!" {
+      t.Fail()
+    }
 	})
 }
 
-func TestHelloBox_SetMessagz(t *testing.T) {
+func TestHelloBox_SetMessage(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
@@ -158,6 +164,7 @@ func TestHelloBox_SetMessagz(t *testing.T) {
 	box.SetMessage("Hello, world!")
 	box.Message()
 }
+
 ```
 
 ## Contributing
