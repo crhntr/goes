@@ -63,8 +63,8 @@ func (box *HelloBox) Create(document goes.Value) goes.Value {
 
 it can be tested as follows:
 
-// Note the build flag ensures the unit tests are not run in the browser
-// when the acceptance tests are being run.
+*Note the build flag ensures the unit tests are not run in the browser
+when the acceptance tests are being run.*
 
 ```go
 //+build !js
