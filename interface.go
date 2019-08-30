@@ -122,6 +122,6 @@ type TypedArray interface {
 	Releaser
 }
 
-func TypedArrayOf(slice interface{}) TypedArray {
-	return nil
-}
+// func TypedArrayOf(slice interface{}) TypedArray {
+// 	return nil
+// }

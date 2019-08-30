@@ -10,31 +10,31 @@ import (
 	reflect "reflect"
 )
 
-// Runtime is a mock of Runtimer interface
-type Runtime struct {
+// MockRuntimer is a mock of Runtimer interface
+type MockRuntimer struct {
 	ctrl     *gomock.Controller
-	recorder *RuntimeMockRecorder
+	recorder *MockRuntimerMockRecorder
 }
 
-// RuntimeMockRecorder is the mock recorder for Runtime
-type RuntimeMockRecorder struct {
-	mock *Runtime
+// MockRuntimerMockRecorder is the mock recorder for MockRuntimer
+type MockRuntimerMockRecorder struct {
+	mock *MockRuntimer
 }
 
-// NewRuntime creates a new mock instance
-func NewRuntime(ctrl *gomock.Controller) *Runtime {
-	mock := &Runtime{ctrl: ctrl}
-	mock.recorder = &RuntimeMockRecorder{mock}
+// NewMockRuntimer creates a new mock instance
+func NewMockRuntimer(ctrl *gomock.Controller) *MockRuntimer {
+	mock := &MockRuntimer{ctrl: ctrl}
+	mock.recorder = &MockRuntimerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Runtime) EXPECT() *RuntimeMockRecorder {
+func (m *MockRuntimer) EXPECT() *MockRuntimerMockRecorder {
 	return m.recorder
 }
 
 // Global mocks base method
-func (m *Runtime) Global() goes.Value {
+func (m *MockRuntimer) Global() goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Global")
 	ret0, _ := ret[0].(goes.Value)
@@ -42,13 +42,13 @@ func (m *Runtime) Global() goes.Value {
 }
 
 // Global indicates an expected call of Global
-func (mr *RuntimeMockRecorder) Global() *gomock.Call {
+func (mr *MockRuntimerMockRecorder) Global() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Global", reflect.TypeOf((*Runtime)(nil).Global))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Global", reflect.TypeOf((*MockRuntimer)(nil).Global))
 }
 
 // Null mocks base method
-func (m *Runtime) Null() goes.Value {
+func (m *MockRuntimer) Null() goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Null")
 	ret0, _ := ret[0].(goes.Value)
@@ -56,13 +56,13 @@ func (m *Runtime) Null() goes.Value {
 }
 
 // Null indicates an expected call of Null
-func (mr *RuntimeMockRecorder) Null() *gomock.Call {
+func (mr *MockRuntimerMockRecorder) Null() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Null", reflect.TypeOf((*Runtime)(nil).Null))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Null", reflect.TypeOf((*MockRuntimer)(nil).Null))
 }
 
 // Undefined mocks base method
-func (m *Runtime) Undefined() goes.Value {
+func (m *MockRuntimer) Undefined() goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Undefined")
 	ret0, _ := ret[0].(goes.Value)
@@ -70,13 +70,13 @@ func (m *Runtime) Undefined() goes.Value {
 }
 
 // Undefined indicates an expected call of Undefined
-func (mr *RuntimeMockRecorder) Undefined() *gomock.Call {
+func (mr *MockRuntimerMockRecorder) Undefined() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Undefined", reflect.TypeOf((*Runtime)(nil).Undefined))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Undefined", reflect.TypeOf((*MockRuntimer)(nil).Undefined))
 }
 
 // ValueOf mocks base method
-func (m *Runtime) ValueOf(x interface{}) goes.Value {
+func (m *MockRuntimer) ValueOf(x interface{}) goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ValueOf", x)
 	ret0, _ := ret[0].(goes.Value)
@@ -84,36 +84,36 @@ func (m *Runtime) ValueOf(x interface{}) goes.Value {
 }
 
 // ValueOf indicates an expected call of ValueOf
-func (mr *RuntimeMockRecorder) ValueOf(x interface{}) *gomock.Call {
+func (mr *MockRuntimerMockRecorder) ValueOf(x interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ValueOf", reflect.TypeOf((*Runtime)(nil).ValueOf), x)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ValueOf", reflect.TypeOf((*MockRuntimer)(nil).ValueOf), x)
 }
 
-// Booler is a mock of Booler interface
-type Booler struct {
+// MockBooler is a mock of Booler interface
+type MockBooler struct {
 	ctrl     *gomock.Controller
-	recorder *BoolerMockRecorder
+	recorder *MockBoolerMockRecorder
 }
 
-// BoolerMockRecorder is the mock recorder for Booler
-type BoolerMockRecorder struct {
-	mock *Booler
+// MockBoolerMockRecorder is the mock recorder for MockBooler
+type MockBoolerMockRecorder struct {
+	mock *MockBooler
 }
 
-// NewBooler creates a new mock instance
-func NewBooler(ctrl *gomock.Controller) *Booler {
-	mock := &Booler{ctrl: ctrl}
-	mock.recorder = &BoolerMockRecorder{mock}
+// NewMockBooler creates a new mock instance
+func NewMockBooler(ctrl *gomock.Controller) *MockBooler {
+	mock := &MockBooler{ctrl: ctrl}
+	mock.recorder = &MockBoolerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Booler) EXPECT() *BoolerMockRecorder {
+func (m *MockBooler) EXPECT() *MockBoolerMockRecorder {
 	return m.recorder
 }
 
 // Bool mocks base method
-func (m *Booler) Bool() bool {
+func (m *MockBooler) Bool() bool {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Bool")
 	ret0, _ := ret[0].(bool)
@@ -121,36 +121,36 @@ func (m *Booler) Bool() bool {
 }
 
 // Bool indicates an expected call of Bool
-func (mr *BoolerMockRecorder) Bool() *gomock.Call {
+func (mr *MockBoolerMockRecorder) Bool() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Bool", reflect.TypeOf((*Booler)(nil).Bool))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Bool", reflect.TypeOf((*MockBooler)(nil).Bool))
 }
 
-// Caller is a mock of Caller interface
-type Caller struct {
+// MockCaller is a mock of Caller interface
+type MockCaller struct {
 	ctrl     *gomock.Controller
-	recorder *CallerMockRecorder
+	recorder *MockCallerMockRecorder
 }
 
-// CallerMockRecorder is the mock recorder for Caller
-type CallerMockRecorder struct {
-	mock *Caller
+// MockCallerMockRecorder is the mock recorder for MockCaller
+type MockCallerMockRecorder struct {
+	mock *MockCaller
 }
 
-// NewCaller creates a new mock instance
-func NewCaller(ctrl *gomock.Controller) *Caller {
-	mock := &Caller{ctrl: ctrl}
-	mock.recorder = &CallerMockRecorder{mock}
+// NewMockCaller creates a new mock instance
+func NewMockCaller(ctrl *gomock.Controller) *MockCaller {
+	mock := &MockCaller{ctrl: ctrl}
+	mock.recorder = &MockCallerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Caller) EXPECT() *CallerMockRecorder {
+func (m *MockCaller) EXPECT() *MockCallerMockRecorder {
 	return m.recorder
 }
 
 // Call mocks base method
-func (m_2 *Caller) Call(m string, args ...interface{}) goes.Value {
+func (m_2 *MockCaller) Call(m string, args ...interface{}) goes.Value {
 	m_2.ctrl.T.Helper()
 	varargs := []interface{}{m}
 	for _, a := range args {
@@ -162,37 +162,37 @@ func (m_2 *Caller) Call(m string, args ...interface{}) goes.Value {
 }
 
 // Call indicates an expected call of Call
-func (mr *CallerMockRecorder) Call(m interface{}, args ...interface{}) *gomock.Call {
+func (mr *MockCallerMockRecorder) Call(m interface{}, args ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{m}, args...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Call", reflect.TypeOf((*Caller)(nil).Call), varargs...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Call", reflect.TypeOf((*MockCaller)(nil).Call), varargs...)
 }
 
-// Floater is a mock of Floater interface
-type Floater struct {
+// MockFloater is a mock of Floater interface
+type MockFloater struct {
 	ctrl     *gomock.Controller
-	recorder *FloaterMockRecorder
+	recorder *MockFloaterMockRecorder
 }
 
-// FloaterMockRecorder is the mock recorder for Floater
-type FloaterMockRecorder struct {
-	mock *Floater
+// MockFloaterMockRecorder is the mock recorder for MockFloater
+type MockFloaterMockRecorder struct {
+	mock *MockFloater
 }
 
-// NewFloater creates a new mock instance
-func NewFloater(ctrl *gomock.Controller) *Floater {
-	mock := &Floater{ctrl: ctrl}
-	mock.recorder = &FloaterMockRecorder{mock}
+// NewMockFloater creates a new mock instance
+func NewMockFloater(ctrl *gomock.Controller) *MockFloater {
+	mock := &MockFloater{ctrl: ctrl}
+	mock.recorder = &MockFloaterMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Floater) EXPECT() *FloaterMockRecorder {
+func (m *MockFloater) EXPECT() *MockFloaterMockRecorder {
 	return m.recorder
 }
 
 // Float mocks base method
-func (m *Floater) Float() float64 {
+func (m *MockFloater) Float() float64 {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Float")
 	ret0, _ := ret[0].(float64)
@@ -200,36 +200,36 @@ func (m *Floater) Float() float64 {
 }
 
 // Float indicates an expected call of Float
-func (mr *FloaterMockRecorder) Float() *gomock.Call {
+func (mr *MockFloaterMockRecorder) Float() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Float", reflect.TypeOf((*Floater)(nil).Float))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Float", reflect.TypeOf((*MockFloater)(nil).Float))
 }
 
-// Getter is a mock of Getter interface
-type Getter struct {
+// MockGetter is a mock of Getter interface
+type MockGetter struct {
 	ctrl     *gomock.Controller
-	recorder *GetterMockRecorder
+	recorder *MockGetterMockRecorder
 }
 
-// GetterMockRecorder is the mock recorder for Getter
-type GetterMockRecorder struct {
-	mock *Getter
+// MockGetterMockRecorder is the mock recorder for MockGetter
+type MockGetterMockRecorder struct {
+	mock *MockGetter
 }
 
-// NewGetter creates a new mock instance
-func NewGetter(ctrl *gomock.Controller) *Getter {
-	mock := &Getter{ctrl: ctrl}
-	mock.recorder = &GetterMockRecorder{mock}
+// NewMockGetter creates a new mock instance
+func NewMockGetter(ctrl *gomock.Controller) *MockGetter {
+	mock := &MockGetter{ctrl: ctrl}
+	mock.recorder = &MockGetterMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Getter) EXPECT() *GetterMockRecorder {
+func (m *MockGetter) EXPECT() *MockGetterMockRecorder {
 	return m.recorder
 }
 
 // Get mocks base method
-func (m *Getter) Get(p string) goes.Value {
+func (m *MockGetter) Get(p string) goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", p)
 	ret0, _ := ret[0].(goes.Value)
@@ -237,36 +237,36 @@ func (m *Getter) Get(p string) goes.Value {
 }
 
 // Get indicates an expected call of Get
-func (mr *GetterMockRecorder) Get(p interface{}) *gomock.Call {
+func (mr *MockGetterMockRecorder) Get(p interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*Getter)(nil).Get), p)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockGetter)(nil).Get), p)
 }
 
-// Indexer is a mock of Indexer interface
-type Indexer struct {
+// MockIndexer is a mock of Indexer interface
+type MockIndexer struct {
 	ctrl     *gomock.Controller
-	recorder *IndexerMockRecorder
+	recorder *MockIndexerMockRecorder
 }
 
-// IndexerMockRecorder is the mock recorder for Indexer
-type IndexerMockRecorder struct {
-	mock *Indexer
+// MockIndexerMockRecorder is the mock recorder for MockIndexer
+type MockIndexerMockRecorder struct {
+	mock *MockIndexer
 }
 
-// NewIndexer creates a new mock instance
-func NewIndexer(ctrl *gomock.Controller) *Indexer {
-	mock := &Indexer{ctrl: ctrl}
-	mock.recorder = &IndexerMockRecorder{mock}
+// NewMockIndexer creates a new mock instance
+func NewMockIndexer(ctrl *gomock.Controller) *MockIndexer {
+	mock := &MockIndexer{ctrl: ctrl}
+	mock.recorder = &MockIndexerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Indexer) EXPECT() *IndexerMockRecorder {
+func (m *MockIndexer) EXPECT() *MockIndexerMockRecorder {
 	return m.recorder
 }
 
 // Index mocks base method
-func (m *Indexer) Index(i int) goes.Value {
+func (m *MockIndexer) Index(i int) goes.Value {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Index", i)
 	ret0, _ := ret[0].(goes.Value)
@@ -274,36 +274,36 @@ func (m *Indexer) Index(i int) goes.Value {
 }
 
 // Index indicates an expected call of Index
-func (mr *IndexerMockRecorder) Index(i interface{}) *gomock.Call {
+func (mr *MockIndexerMockRecorder) Index(i interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Index", reflect.TypeOf((*Indexer)(nil).Index), i)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Index", reflect.TypeOf((*MockIndexer)(nil).Index), i)
 }
 
-// InstanceOfer is a mock of InstanceOfer interface
-type InstanceOfer struct {
+// MockInstanceOfer is a mock of InstanceOfer interface
+type MockInstanceOfer struct {
 	ctrl     *gomock.Controller
-	recorder *InstanceOferMockRecorder
+	recorder *MockInstanceOferMockRecorder
 }
 
-// InstanceOferMockRecorder is the mock recorder for InstanceOfer
-type InstanceOferMockRecorder struct {
-	mock *InstanceOfer
+// MockInstanceOferMockRecorder is the mock recorder for MockInstanceOfer
+type MockInstanceOferMockRecorder struct {
+	mock *MockInstanceOfer
 }
 
-// NewInstanceOfer creates a new mock instance
-func NewInstanceOfer(ctrl *gomock.Controller) *InstanceOfer {
-	mock := &InstanceOfer{ctrl: ctrl}
-	mock.recorder = &InstanceOferMockRecorder{mock}
+// NewMockInstanceOfer creates a new mock instance
+func NewMockInstanceOfer(ctrl *gomock.Controller) *MockInstanceOfer {
+	mock := &MockInstanceOfer{ctrl: ctrl}
+	mock.recorder = &MockInstanceOferMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *InstanceOfer) EXPECT() *InstanceOferMockRecorder {
+func (m *MockInstanceOfer) EXPECT() *MockInstanceOferMockRecorder {
 	return m.recorder
 }
 
 // InstanceOf mocks base method
-func (m *InstanceOfer) InstanceOf(t goes.Value) bool {
+func (m *MockInstanceOfer) InstanceOf(t goes.Value) bool {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "InstanceOf", t)
 	ret0, _ := ret[0].(bool)
@@ -311,36 +311,36 @@ func (m *InstanceOfer) InstanceOf(t goes.Value) bool {
 }
 
 // InstanceOf indicates an expected call of InstanceOf
-func (mr *InstanceOferMockRecorder) InstanceOf(t interface{}) *gomock.Call {
+func (mr *MockInstanceOferMockRecorder) InstanceOf(t interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InstanceOf", reflect.TypeOf((*InstanceOfer)(nil).InstanceOf), t)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InstanceOf", reflect.TypeOf((*MockInstanceOfer)(nil).InstanceOf), t)
 }
 
-// Inter is a mock of Inter interface
-type Inter struct {
+// MockInter is a mock of Inter interface
+type MockInter struct {
 	ctrl     *gomock.Controller
-	recorder *InterMockRecorder
+	recorder *MockInterMockRecorder
 }
 
-// InterMockRecorder is the mock recorder for Inter
-type InterMockRecorder struct {
-	mock *Inter
+// MockInterMockRecorder is the mock recorder for MockInter
+type MockInterMockRecorder struct {
+	mock *MockInter
 }
 
-// NewInter creates a new mock instance
-func NewInter(ctrl *gomock.Controller) *Inter {
-	mock := &Inter{ctrl: ctrl}
-	mock.recorder = &InterMockRecorder{mock}
+// NewMockInter creates a new mock instance
+func NewMockInter(ctrl *gomock.Controller) *MockInter {
+	mock := &MockInter{ctrl: ctrl}
+	mock.recorder = &MockInterMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Inter) EXPECT() *InterMockRecorder {
+func (m *MockInter) EXPECT() *MockInterMockRecorder {
 	return m.recorder
 }
 
 // Int mocks base method
-func (m *Inter) Int() int {
+func (m *MockInter) Int() int {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Int")
 	ret0, _ := ret[0].(int)
@@ -348,36 +348,36 @@ func (m *Inter) Int() int {
 }
 
 // Int indicates an expected call of Int
-func (mr *InterMockRecorder) Int() *gomock.Call {
+func (mr *MockInterMockRecorder) Int() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Int", reflect.TypeOf((*Inter)(nil).Int))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Int", reflect.TypeOf((*MockInter)(nil).Int))
 }
 
-// Invoker is a mock of Invoker interface
-type Invoker struct {
+// MockInvoker is a mock of Invoker interface
+type MockInvoker struct {
 	ctrl     *gomock.Controller
-	recorder *InvokerMockRecorder
+	recorder *MockInvokerMockRecorder
 }
 
-// InvokerMockRecorder is the mock recorder for Invoker
-type InvokerMockRecorder struct {
-	mock *Invoker
+// MockInvokerMockRecorder is the mock recorder for MockInvoker
+type MockInvokerMockRecorder struct {
+	mock *MockInvoker
 }
 
-// NewInvoker creates a new mock instance
-func NewInvoker(ctrl *gomock.Controller) *Invoker {
-	mock := &Invoker{ctrl: ctrl}
-	mock.recorder = &InvokerMockRecorder{mock}
+// NewMockInvoker creates a new mock instance
+func NewMockInvoker(ctrl *gomock.Controller) *MockInvoker {
+	mock := &MockInvoker{ctrl: ctrl}
+	mock.recorder = &MockInvokerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Invoker) EXPECT() *InvokerMockRecorder {
+func (m *MockInvoker) EXPECT() *MockInvokerMockRecorder {
 	return m.recorder
 }
 
 // Invoke mocks base method
-func (m *Invoker) Invoke(args ...interface{}) goes.Value {
+func (m *MockInvoker) Invoke(args ...interface{}) goes.Value {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{}
 	for _, a := range args {
@@ -389,36 +389,36 @@ func (m *Invoker) Invoke(args ...interface{}) goes.Value {
 }
 
 // Invoke indicates an expected call of Invoke
-func (mr *InvokerMockRecorder) Invoke(args ...interface{}) *gomock.Call {
+func (mr *MockInvokerMockRecorder) Invoke(args ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Invoke", reflect.TypeOf((*Invoker)(nil).Invoke), args...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Invoke", reflect.TypeOf((*MockInvoker)(nil).Invoke), args...)
 }
 
-// Lengther is a mock of Lengther interface
-type Lengther struct {
+// MockLengther is a mock of Lengther interface
+type MockLengther struct {
 	ctrl     *gomock.Controller
-	recorder *LengtherMockRecorder
+	recorder *MockLengtherMockRecorder
 }
 
-// LengtherMockRecorder is the mock recorder for Lengther
-type LengtherMockRecorder struct {
-	mock *Lengther
+// MockLengtherMockRecorder is the mock recorder for MockLengther
+type MockLengtherMockRecorder struct {
+	mock *MockLengther
 }
 
-// NewLengther creates a new mock instance
-func NewLengther(ctrl *gomock.Controller) *Lengther {
-	mock := &Lengther{ctrl: ctrl}
-	mock.recorder = &LengtherMockRecorder{mock}
+// NewMockLengther creates a new mock instance
+func NewMockLengther(ctrl *gomock.Controller) *MockLengther {
+	mock := &MockLengther{ctrl: ctrl}
+	mock.recorder = &MockLengtherMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Lengther) EXPECT() *LengtherMockRecorder {
+func (m *MockLengther) EXPECT() *MockLengtherMockRecorder {
 	return m.recorder
 }
 
 // Length mocks base method
-func (m *Lengther) Length() int {
+func (m *MockLengther) Length() int {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Length")
 	ret0, _ := ret[0].(int)
@@ -426,36 +426,36 @@ func (m *Lengther) Length() int {
 }
 
 // Length indicates an expected call of Length
-func (mr *LengtherMockRecorder) Length() *gomock.Call {
+func (mr *MockLengtherMockRecorder) Length() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Length", reflect.TypeOf((*Lengther)(nil).Length))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Length", reflect.TypeOf((*MockLengther)(nil).Length))
 }
 
-// Newer is a mock of Newer interface
-type Newer struct {
+// MockNewer is a mock of Newer interface
+type MockNewer struct {
 	ctrl     *gomock.Controller
-	recorder *NewerMockRecorder
+	recorder *MockNewerMockRecorder
 }
 
-// NewerMockRecorder is the mock recorder for Newer
-type NewerMockRecorder struct {
-	mock *Newer
+// MockNewerMockRecorder is the mock recorder for MockNewer
+type MockNewerMockRecorder struct {
+	mock *MockNewer
 }
 
-// NewNewer creates a new mock instance
-func NewNewer(ctrl *gomock.Controller) *Newer {
-	mock := &Newer{ctrl: ctrl}
-	mock.recorder = &NewerMockRecorder{mock}
+// NewMockNewer creates a new mock instance
+func NewMockNewer(ctrl *gomock.Controller) *MockNewer {
+	mock := &MockNewer{ctrl: ctrl}
+	mock.recorder = &MockNewerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Newer) EXPECT() *NewerMockRecorder {
+func (m *MockNewer) EXPECT() *MockNewerMockRecorder {
 	return m.recorder
 }
 
 // New mocks base method
-func (m *Newer) New(args ...interface{}) goes.Value {
+func (m *MockNewer) New(args ...interface{}) goes.Value {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{}
 	for _, a := range args {
@@ -467,106 +467,106 @@ func (m *Newer) New(args ...interface{}) goes.Value {
 }
 
 // New indicates an expected call of New
-func (mr *NewerMockRecorder) New(args ...interface{}) *gomock.Call {
+func (mr *MockNewerMockRecorder) New(args ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "New", reflect.TypeOf((*Newer)(nil).New), args...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "New", reflect.TypeOf((*MockNewer)(nil).New), args...)
 }
 
-// Setter is a mock of Setter interface
-type Setter struct {
+// MockSetter is a mock of Setter interface
+type MockSetter struct {
 	ctrl     *gomock.Controller
-	recorder *SetterMockRecorder
+	recorder *MockSetterMockRecorder
 }
 
-// SetterMockRecorder is the mock recorder for Setter
-type SetterMockRecorder struct {
-	mock *Setter
+// MockSetterMockRecorder is the mock recorder for MockSetter
+type MockSetterMockRecorder struct {
+	mock *MockSetter
 }
 
-// NewSetter creates a new mock instance
-func NewSetter(ctrl *gomock.Controller) *Setter {
-	mock := &Setter{ctrl: ctrl}
-	mock.recorder = &SetterMockRecorder{mock}
+// NewMockSetter creates a new mock instance
+func NewMockSetter(ctrl *gomock.Controller) *MockSetter {
+	mock := &MockSetter{ctrl: ctrl}
+	mock.recorder = &MockSetterMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Setter) EXPECT() *SetterMockRecorder {
+func (m *MockSetter) EXPECT() *MockSetterMockRecorder {
 	return m.recorder
 }
 
 // Set mocks base method
-func (m *Setter) Set(p string, x interface{}) {
+func (m *MockSetter) Set(p string, x interface{}) {
 	m.ctrl.T.Helper()
 	m.ctrl.Call(m, "Set", p, x)
 }
 
 // Set indicates an expected call of Set
-func (mr *SetterMockRecorder) Set(p, x interface{}) *gomock.Call {
+func (mr *MockSetterMockRecorder) Set(p, x interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*Setter)(nil).Set), p, x)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockSetter)(nil).Set), p, x)
 }
 
-// SetIndexer is a mock of SetIndexer interface
-type SetIndexer struct {
+// MockSetIndexer is a mock of SetIndexer interface
+type MockSetIndexer struct {
 	ctrl     *gomock.Controller
-	recorder *SetIndexerMockRecorder
+	recorder *MockSetIndexerMockRecorder
 }
 
-// SetIndexerMockRecorder is the mock recorder for SetIndexer
-type SetIndexerMockRecorder struct {
-	mock *SetIndexer
+// MockSetIndexerMockRecorder is the mock recorder for MockSetIndexer
+type MockSetIndexerMockRecorder struct {
+	mock *MockSetIndexer
 }
 
-// NewSetIndexer creates a new mock instance
-func NewSetIndexer(ctrl *gomock.Controller) *SetIndexer {
-	mock := &SetIndexer{ctrl: ctrl}
-	mock.recorder = &SetIndexerMockRecorder{mock}
+// NewMockSetIndexer creates a new mock instance
+func NewMockSetIndexer(ctrl *gomock.Controller) *MockSetIndexer {
+	mock := &MockSetIndexer{ctrl: ctrl}
+	mock.recorder = &MockSetIndexerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *SetIndexer) EXPECT() *SetIndexerMockRecorder {
+func (m *MockSetIndexer) EXPECT() *MockSetIndexerMockRecorder {
 	return m.recorder
 }
 
 // SetIndex mocks base method
-func (m *SetIndexer) SetIndex(i int, x interface{}) {
+func (m *MockSetIndexer) SetIndex(i int, x interface{}) {
 	m.ctrl.T.Helper()
 	m.ctrl.Call(m, "SetIndex", i, x)
 }
 
 // SetIndex indicates an expected call of SetIndex
-func (mr *SetIndexerMockRecorder) SetIndex(i, x interface{}) *gomock.Call {
+func (mr *MockSetIndexerMockRecorder) SetIndex(i, x interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndex", reflect.TypeOf((*SetIndexer)(nil).SetIndex), i, x)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndex", reflect.TypeOf((*MockSetIndexer)(nil).SetIndex), i, x)
 }
 
-// Stringer is a mock of Stringer interface
-type Stringer struct {
+// MockStringer is a mock of Stringer interface
+type MockStringer struct {
 	ctrl     *gomock.Controller
-	recorder *StringerMockRecorder
+	recorder *MockStringerMockRecorder
 }
 
-// StringerMockRecorder is the mock recorder for Stringer
-type StringerMockRecorder struct {
-	mock *Stringer
+// MockStringerMockRecorder is the mock recorder for MockStringer
+type MockStringerMockRecorder struct {
+	mock *MockStringer
 }
 
-// NewStringer creates a new mock instance
-func NewStringer(ctrl *gomock.Controller) *Stringer {
-	mock := &Stringer{ctrl: ctrl}
-	mock.recorder = &StringerMockRecorder{mock}
+// NewMockStringer creates a new mock instance
+func NewMockStringer(ctrl *gomock.Controller) *MockStringer {
+	mock := &MockStringer{ctrl: ctrl}
+	mock.recorder = &MockStringerMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Stringer) EXPECT() *StringerMockRecorder {
+func (m *MockStringer) EXPECT() *MockStringerMockRecorder {
 	return m.recorder
 }
 
 // String mocks base method
-func (m *Stringer) String() string {
+func (m *MockStringer) String() string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "String")
 	ret0, _ := ret[0].(string)
@@ -574,36 +574,36 @@ func (m *Stringer) String() string {
 }
 
 // String indicates an expected call of String
-func (mr *StringerMockRecorder) String() *gomock.Call {
+func (mr *MockStringerMockRecorder) String() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "String", reflect.TypeOf((*Stringer)(nil).String))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "String", reflect.TypeOf((*MockStringer)(nil).String))
 }
 
-// Truther is a mock of Truther interface
-type Truther struct {
+// MockTruther is a mock of Truther interface
+type MockTruther struct {
 	ctrl     *gomock.Controller
-	recorder *TrutherMockRecorder
+	recorder *MockTrutherMockRecorder
 }
 
-// TrutherMockRecorder is the mock recorder for Truther
-type TrutherMockRecorder struct {
-	mock *Truther
+// MockTrutherMockRecorder is the mock recorder for MockTruther
+type MockTrutherMockRecorder struct {
+	mock *MockTruther
 }
 
-// NewTruther creates a new mock instance
-func NewTruther(ctrl *gomock.Controller) *Truther {
-	mock := &Truther{ctrl: ctrl}
-	mock.recorder = &TrutherMockRecorder{mock}
+// NewMockTruther creates a new mock instance
+func NewMockTruther(ctrl *gomock.Controller) *MockTruther {
+	mock := &MockTruther{ctrl: ctrl}
+	mock.recorder = &MockTrutherMockRecorder{mock}
 	return mock
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use
-func (m *Truther) EXPECT() *TrutherMockRecorder {
+func (m *MockTruther) EXPECT() *MockTrutherMockRecorder {
 	return m.recorder
 }
 
 // Truthy mocks base method
-func (m *Truther) Truthy() bool {
+func (m *MockTruther) Truthy() bool {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Truthy")
 	ret0, _ := ret[0].(bool)
@@ -611,9 +611,9 @@ func (m *Truther) Truthy() bool {
 }
 
 // Truthy indicates an expected call of Truthy
-func (mr *TrutherMockRecorder) Truthy() *gomock.Call {
+func (mr *MockTrutherMockRecorder) Truthy() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Truthy", reflect.TypeOf((*Truther)(nil).Truthy))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Truthy", reflect.TypeOf((*MockTruther)(nil).Truthy))
 }
 
 // Typer is a mock of Typer interface

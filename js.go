@@ -6,6 +6,12 @@ import (
 	"syscall/js"
 )
 
+type JSValuer interface {
+	Value
+
+	JSValue() js.Value
+}
+
 type Wrapper = js.Wrapper
 
 func (v V) JSValue() js.Value { return v.Value }
