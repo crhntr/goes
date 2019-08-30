@@ -1,4 +1,4 @@
-# GOES
+# GOES [![GoDoc](https://godoc.org/github.com/crhntr/goes?status.svg)](https://godoc.org/github.com/crhntr/goes)
 
 Write standard tests for your Go compiled to WASM.
 
