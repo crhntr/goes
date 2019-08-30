@@ -45,7 +45,10 @@ func TestHelloBox_SetMessage(t *testing.T) {
 
 		box.Create(document)
 		box.SetMessage("Hello, world!")
-		box.Message()
+
+    if box.Message() != "Hello, world!" {
+      t.Fail()
+    }
 	}
 
 	t.Run("when initialized with an empty string", func(t *testing.T) {
@@ -69,7 +72,10 @@ func TestHelloBox_SetMessage(t *testing.T) {
 		box := greeting.NewHelloBox("")
 
 		box.Create(document)
-		box.Message()
+
+    if box.Message() != "Hello, world!" {
+      t.Fail()
+    }
 	})
 }
 
