@@ -1,8 +1,6 @@
 # GOES
 
-Write the WASM test!
-
-![Go write the WASM test (a riff on Bernie's quote "I wrote the damn bill!")](https://raw.githubusercontent.com/crhntr/goes/master/tooling/GoWriteTheWasmTest.png)
+Write standard tests for your Go compiled to WASM.
 
 Inspired by [go-billy](https://github.com/src-d/go-billy), "goes" wraps
 "syscall/js" with interface types. The goal is to make it easier to test the Go
@@ -12,13 +10,7 @@ project in a browser or with Node.
 The example in examples/greeting has an acceptance test using
 `github.com/chromedp/chromedp` to test how the WASM interacts with the page.
 
-## Contributing
-
-- Please cake sure to run `go generate ./...` when contributing to the interface declarations.
-
-- To run acceptance tests for the examples run `go test -tags acceptance ./...`.
-
-## Examples
+## Hello World Example
 
 Given a this wrapper around a div containing a greeting,
 
@@ -167,3 +159,11 @@ func TestHelloBox_SetMessagz(t *testing.T) {
 	box.Message()
 }
 ```
+
+## Contributing
+
+- Please cake sure to run `go generate ./...` when contributing to the interface declarations.
+
+- To run acceptance tests for the examples run `go test -tags acceptance ./...`.
+
+![Go write the WASM test (a riff on Bernie's quote "I wrote the damn bill!")](https://raw.githubusercontent.com/crhntr/goes/master/tooling/GoWriteTheWasmTest.png)
