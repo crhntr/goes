@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/crhntr/goes/goestest"
+	"github.com/crhntr/goes/goesfixtures"
 )
 
 func main() {
@@ -22,19 +22,21 @@ func Handler(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 	switch req.URL.Path {
-	case goestest.MinimalIndexPageExecutableWASMPath:
+	case goesfixtures.MinimalIndexPageExecutableWASMPath:
 		res.Header().Set("content-type", "application/wasm")
 		http.ServeFile(res, req, "webapp/main.wasm")
-	case goestest.MinimalIndexPageGoWASMExecPath:
+	case goesfixtures.MinimalIndexPageGoWASMExecPath:
 		res.Header().Set("content-type", "application/json")
-		res.Write(goestest.GoWASMExec())
+		res.Write(goesfixtures.GoWASMExec())
 	case "/api/spanish-greeting":
 		res.Header().Set("content-type", "text/plain")
 		res.WriteHeader(http.StatusOK)
 		res.Write([]byte("¡Hola, mundo!"))
 	case "/":
 		res.WriteHeader(http.StatusOK)
-		res.Write(goestest.MinimalIndexPage())
+		if err := goesfixtures.HTMLPage(res); err != nil {
+			log.Println(err)
+		}
 	default:
 		res.WriteHeader(http.StatusNotFound)
 	}
