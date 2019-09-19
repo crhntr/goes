@@ -1,6 +1,6 @@
 module github.com/crhntr/goes
 
-go 1.12
+go 1.13
 
 require (
 	github.com/chromedp/cdproto v0.0.0-20190812224334-39ef923dcb8d
