@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Go WASM • TodoMVC</title>
+
+		<link rel="stylesheet" href="/dependencies/todomvc-app-css/index.css">
+		<link rel="stylesheet" href="/dependencies/todomvc-common/base.css">
+
+		<script src="{{ .GoJS }}"></script>
+		<script>
+			if (!WebAssembly.instantiateStreaming) { // polyfill
+				WebAssembly.instantiateStreaming = async (resp, importObject) => {
+					const source = await (await resp).arrayBuffer();
+					return await WebAssembly.instantiate(source, importObject);
+				};
+			}
+			const go = new Go();
+			WebAssembly.instantiateStreaming(fetch({{ .WASMBin }}), go.importObject).then((result) => {
+				go.run(result.instance);
+			});
+		</script>
+
+	</head>
+	<body>
+		<section class="todoapp" goes-cloak>
+
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" goes-model="newTodo" @keyup.enter="addTodo">
+			</header>
+
+			<section class="main" goes-show="todos.length">
+				<input id="toggle-all" class="toggle-all" type="checkbox" goes-model="allDone">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+					<li class="todo" goes-for="todo in filteredTodos" :key="todo.id" :class="{completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+							<input class="toggle" type="checkbox" goes-model="todo.completed">
+							<label @dblclick="editTodo(todo)"><!-- todo.title --></label>
+							<button class="destroy" @click="removeTodo(todo)"></button>
+						</div>
+						<input class="edit" type="text" goes-model="todo.title" goes-todo-focus="todo == editedTodo" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)">
+					</li>
+				</ul>
+			</section>
+
+			<footer class="footer" goes-show="todos.length">
+				<span class="todo-count">
+					<strong goes-text="remaining"></strong><!--  pluralize('item', remaining) -->left
+				</span>
+				<ul class="filters">
+					<li><a href="#/all" :class="{selected: visibility == 'all'}">All</a></li>
+					<li><a href="#/active" :class="{selected: visibility == 'active'}">Active</a></li>
+					<li><a href="#/completed" :class="{selected: visibility == 'completed'}">Completed</a></li>
+				</ul>
+				<button class="clear-completed" @click="removeCompleted" goes-show="todos.length > remaining">
+					Clear completed
+				</button>
+			</footer>
+		</section>
+
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<p>Written by <a href="http://crhntr.com">Christopher Hunter</a></p>
+		</footer>
+	</body>
+</html>
