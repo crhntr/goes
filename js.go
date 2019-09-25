@@ -24,7 +24,12 @@ func (_ Runtime) Null() Value { return V{js.Null()} }
 
 func (_ Runtime) Undefined() Value { return V{js.Undefined()} }
 
-func (_ Runtime) ValueOf(x interface{}) Value { return V{js.ValueOf(x)} }
+func (_ Runtime) ValueOf(x interface{}) Value {
+	if v, ok := x.(interface{ Value() goes.Value }); ok {
+		x = v.Value()
+	}
+	return V{js.ValueOf(x)}
+}
 
 type V struct{ js.Value }
 
