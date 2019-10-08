@@ -1,6 +1,6 @@
 # GOES [![GoDoc](https://godoc.org/github.com/crhntr/goes?status.svg)](https://godoc.org/github.com/crhntr/goes)
 
-Write standard tests for your Go compiled to WASM.
+Help write tests for your Go to be compiled to WASM.
 
 Inspired by [go-billy](https://github.com/src-d/go-billy), "goes" wraps
 "syscall/js" with interface types. The goal is to make it easier to test the Go
