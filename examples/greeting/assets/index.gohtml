@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="/wasm_exec.js" type="application/javascript"></script>
+    <script src="/init.js" type="application/javascript"></script>
+    <script type="application/javascript">init("/main.wasm")</script>
+
+  </head>
+  <body>
+    {{template "page-template" . }}
+  </body>
+
+  <script type="text/x-template" id="page-template">
+    <div>
+      <p onclick="greeting.Reverse(this)" id="message">{{.Message}}</p>
+      <button onclick="greeting.FetchSpanish(this)">Fetch Spanish Greeting</button>
+    </div>
+  </script>
+
+  {{.XTemplates}}
+</html>
